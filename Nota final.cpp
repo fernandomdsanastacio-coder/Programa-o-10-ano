@@ -25,7 +25,7 @@ int main()
         }
         else
         {
-            std::cout<<"Passas-te";
+            std::cout<<"Chumbas-te";
         }
     
          
