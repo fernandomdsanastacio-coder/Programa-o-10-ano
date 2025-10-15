@@ -7,11 +7,11 @@ int main()
 	int num = 28;
 while (num != 0)
 	{
-	cout << "Diz um número \n";
+	cout << "Diz um nÃºmero \n";
 	cin >> num;
 	if (num % 2 == 0)
 	{
-		cout << "É par \n";
+		cout << "Ã‰ par \n";
 	}
 	else
 	{
