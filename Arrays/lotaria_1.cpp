@@ -13,42 +13,42 @@ int main()
 	for (i = 0; i < 5; i++)
 	{
 		ramdomNum[i + 1] = (rand() % 49) + 1;
-		cout << "advinhe o " << i + 1 << "º número";
+		cout << "advinhe o " << i + 1 << "Âº nÃºmero";
 		cin >> adv[i + 1];
 		
 	}
 	if (adv[i] == ramdomNum[i])
 	{
-		cout << "Acertas-te tudo, Parabéns";
+		cout << "Acertas-te tudo, ParabÃ©ns";
 	}
 	 if (adv[1]== ramdomNum[1])
 	{
 		cout << ramdomNum[1];
-		cout << "Acertas-te o primeiro número";
+		cout << "Acertas-te o primeiro nÃºmero";
 	}
 	 if (adv[2] == ramdomNum[2])
 	{
 		cout << ramdomNum[2];
-		cout << "Acertas-te o segundo número";
+		cout << "Acertas-te o segundo nÃºmero";
 	}
 	 if (adv[3] == ramdomNum[3])
 	{
 		cout << ramdomNum[3];
-		cout << "Acertas-te o terceiro número";
+		cout << "Acertas-te o terceiro nÃºmero";
 	}
 	 if (adv[4] == ramdomNum[4])
 	{
 		cout << ramdomNum[4];
-		cout << "Acertas-te o quarto número";
+		cout << "Acertas-te o quarto nÃºmero";
 	}
 	 if (adv[5] == ramdomNum[5])
 	{
 		cout << ramdomNum[5];
-		cout << "Acertas-te o quinto número";
+		cout << "Acertas-te o quinto nÃºmero";
 	}
 	else
 	{
-		cout << "Não acertas-te nada, parabéns";
+		cout << "NÃ£o acertas-te nada, parabÃ©ns";
 	}
 	 cout << endl << ramdomNum[1] ;
 	 cout << endl << ramdomNum[2];
