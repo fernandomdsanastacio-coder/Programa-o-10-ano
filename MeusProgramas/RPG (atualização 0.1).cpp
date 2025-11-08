@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
-	int  resp1, count = 0,i, resp, vidaM = 20, vidaP = 20, arma, dano = 0, velocidade = 0, defesa = 0, ouro=0, xp=0, pontos=0, pontosVe=0, pontosD=0, pontosV=0;
+	int  resp1,vidas, count = 0,i, resp, vidaM = 20, vidaP = 20, arma, dano = 0, velocidade = 0, defesa = 0, ouro=0, xp=0, pontos=0, pontosVe=0, pontosD=0, pontosV=0;
 	char escolha;
 	string nome;
 	srand(time(0));
@@ -118,6 +118,7 @@ int main()
 			else
 			{
 			cout << "Foste derrotado pelo monstro!" << endl;
+			return 0;
 			}
 		}
 	} while (count < 2 && vidaP>0);
@@ -220,7 +221,190 @@ int main()
 						cout << "Não tens ouro suficiente!" << endl;
 					}
 					break;
+
 			}
+			break;
+			cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a). O que veio fazer aqui? " << endl << "Iniciar uma missão? Só há duas missãos no momento: " << endl << "Matar 4 slimes de nivel 3 : 100 de ouro e 50 xp (1)" << endl << "Matar 2 cães do inferno nivel 5, o que eu não recomendaria : 300 de ouro e 100 xp (2)";
+			cin >> resp1;
+			switch (resp1)
+			{
+			case 1:
+				cout << "Aceitaste a missão de matar slimes!" << endl;
+				cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
+				cout << "Estás numa floresta escura e húmida, sentes uma pressão pessada no ar em que respiras." << endl << "De repente um grupo de 5 slimes te ataca." << endl;
+				do
+				{
+					count++;
+					do
+					{
+						if (vidaP > 0)
+						{
+							resp = 0;
+							vidaM = 10;
+							cout << "Gire o dado para atacar (1) : ";
+							cin >> resp;
+							if (resp == 1)
+							{
+
+								int num = (rand() % 19 + 1) + velocidade;
+								cout << "O valor do dado foi: " << num << endl;
+								int Monum = ((rand() % 19 + 1) - defesa) + 4;
+								cout << "O valor do dado do slime foi: " << Monum << endl;
+								resp == 0;
+								if (num > Monum)
+								{
+									if (num == 20)
+									{
+										cout << "\33[92mCRÍTICO!!\33[0m" << endl;
+										cout << "Dano dobrado!" << endl;
+										cout << "Role o dado para dar dano no slime (1) : ";
+										cin >> resp;
+										num == 0;
+										if (resp == 1)
+										{
+											num = ((rand() % 7 + 1) * 2) + dano;
+											cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
+											vidaM = vidaM - num;
+											cout << "\33[32mO slime está com: " << vidaM << "vida \33[0m" << endl;
+										}
+									}
+									cout << "\33[92mVocê atacou o slime com sucesso!\33[0m" << endl;
+									cout << "Role o dado para dar dano no slime (1): ";
+									cin >> resp;
+									num == 0;
+									if (resp == 1)
+									{
+										num = rand() % 7 + 1;
+										cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
+										vidaM = vidaM - num;
+										cout << "\33[32mO slime está com: " << vidaM << "vida \33[0m" << endl;
+									}
+								}
+								else
+								{
+									Monum = 0;
+									cout << "\33[94mO slime atacou-te primeiro\33[0m" << endl;
+									Monum = rand() % 5 + 1;
+									cout << "O dano do slime foi: " << Monum << endl;
+									vidaP = vidaP - Monum;
+									cout << "\33[31mVocê está com :" << vidaP << " de vida\33[0m" << endl;
+								}
+							}
+							else
+							{
+								cout << "Desististe, estás com Medo ??!!" << endl;
+							}
+						}
+					} while (vidaM > 0 && vidaP > 0);
+					{
+						if (vidaM <= 0)
+						{
+							cout << "\33[32mVences-te o slime!\33[0m" << endl;
+							vidaM = 20;
+						}
+						else
+						{
+							cout << "Game Over !!!!!" << endl;
+							return 0;
+						}
+					}
+				} while (count < 5 && vidaP>0);
+				{
+					cout << "Mataste os 5 slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
+					ouro = ouro + 100;
+					xp = xp + 50;
+				}
+				break;
+			case 2:
+				cout << "Aceitaste a missão de matar cães do inferno! Só um milagre pode-te salvar." << endl;
+				cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
+				cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
+				do
+				{
+					count++;
+					do
+					{
+						if (vidaP > 0)
+						{
+							int defesaC = defesa + 3;
+							resp = 0;
+							vidaM = 50;
+							cout << "Gire o dado para atacar (1) : ";
+							cin >> resp;
+							if (resp == 1)
+							{
+
+								int num = ((rand() % 19 + 1) + velocidade) - defesaC;
+								cout << "O valor do dado foi: " << num << endl;
+								int Monum = ((rand() % 19 + 1) - defesa) + 7;
+								cout << "O valor do dado do monstro foi: " << Monum << endl;
+								resp == 0;
+								if (num > Monum)
+								{
+									if (num == 20)
+									{
+										cout << "\33[92mCRÍTICO!!\33[0m" << endl;
+										cout << "Dano dobrado!" << endl;
+										cout << "Role o dado para dar dano no monstro (1) : ";
+										cin >> resp;
+										num == 0;
+										if (resp == 1)
+										{
+											num = ((rand() % 7 + 1) * 2) + dano;
+											cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
+											vidaM = vidaM - num;
+											cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
+										}
+									}
+									cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
+									cout << "Role o dado para dar dano no monstro (1): ";
+									cin >> resp;
+									num == 0;
+									if (resp == 1)
+									{
+										num = rand() % 7 + 1;
+										cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
+										vidaM = vidaM - num;
+										cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
+									}
+								}
+								else
+								{
+									Monum = 0;
+									cout << "\33[94mO monstro atacou-te primeiro\33[0m" << endl;
+									Monum = rand() % 9 + 1;
+									cout << "O dano do monstro foi: " << Monum << endl;
+									vidaP = vidaP - Monum;
+									cout << "\33[31mVocê está com :" << vidaP << " de vida\33[0m" << endl;
+								}
+							}
+							else
+							{
+								cout << "Desististe, estás com Medo ??!!" << endl;
+							}
+						}
+					} while (vidaM > 0 && vidaP > 0);
+					{
+						if (vidaM <= 0)
+						{
+							cout << "\33[32mVences-te o monstro!\33[0m" << endl;
+							vidaM = 20;
+						}
+						else
+						{
+							cout << "Game Over !!!!!" << endl;
+							return 0;
+						}
+					}
+				} while (count < 2 && vidaP>0);
+				{
+					cout << "Mataste os 2 cães do inferno! Parabéns!!" << endl << "Recebeste xp e ouro";
+					ouro = ouro + 200;
+					xp = xp + 100;
+				}
+				break;
+			}
+
 			break;
 		case 2:
 			resp1 = 0;
@@ -232,6 +416,7 @@ int main()
 					cout << "Aceitaste a missão de matar slimes!" << endl;
 					cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 					cout << "Estás numa floresta escura e húmida, sentes uma pressão pessada no ar em que respiras." << endl << "De repente um grupo de 5 slimes te ataca." << endl;
+					
 					do
 					{
 						count++;
@@ -239,8 +424,9 @@ int main()
 						{
 							if (vidaP > 0)
 							{
+
 								resp = 0;
-								vidaM = 10;
+								
 								cout << "Gire o dado para atacar (1) : ";
 								cin >> resp;
 								if (resp == 1)
@@ -264,8 +450,8 @@ int main()
 											{
 												num = ((rand() % 7 + 1) * 2) + dano;
 												cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
-												vidaM = vidaM - num;
-												cout << "\33[32mO slime está com: " << vidaM << "vida \33[0m" << endl;
+												vidas = vidas - num;
+												cout << "\33[32mO slime está com: " << vidas << "vida \33[0m" << endl;
 											}
 										}
 										cout << "\33[92mVocê atacou o slime com sucesso!\33[0m" << endl;
@@ -274,10 +460,10 @@ int main()
 										num == 0;
 										if (resp == 1)
 										{
-											num = rand() % 7 + 1;
+											num = (rand() % 7 + 1) + dano;
 											cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
-											vidaM = vidaM - num;
-											cout << "\33[32mO slime está com: " << vidaM << "vida \33[0m" << endl;
+											vidas = vidas - num;
+											cout << "\33[32mO slime está com: " << vidas << "vida \33[0m" << endl;
 										}
 									}
 									else
@@ -293,14 +479,15 @@ int main()
 								else
 								{
 									cout << "Desististe, estás com Medo ??!!" << endl;
+									return 0;
 								}
 							}
-						} while (vidaM > 0 && vidaP > 0);
+						} while (vidas > 0 && vidaP > 0);
 						{
-							if (vidaM <= 0)
+							if (vidas <= 0)
 							{
 								cout << "\33[32mVences-te o slime!\33[0m" << endl;
-								vidaM = 20;
+								vidas = 20;
 							}
 							else
 							{
