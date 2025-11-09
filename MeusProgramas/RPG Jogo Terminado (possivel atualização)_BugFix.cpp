@@ -12,7 +12,7 @@ int main()
 	char escolha;
 	string nome;
 	srand(time(0));
-	cout << "Bem vindo ao RPG de combate por turnos! " << endl << "Neste jogo tu és um herói que irá salvar o mundo de monstros terríveis! " << endl << "Para começar, escolha o seu nome: ";
+	cout << "=====Bem vindo ao RPG de combate por turnos!====" << endl << "Neste jogo tu és um herói que irá salvar o mundo de monstros terríveis! " << endl << "Para começar, escolha o seu nome: ";
 	cin >> nome;
 	cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", eu sou a mestre da guilda que irá dar-te missões para derrotares monstros e ganhares recompensas pelas missõs." << endl << "Cada monstro derrotado irá dar-te pontos de experiência e ouro para poderes melhorar o teu equipamento!" << endl << "A tua primeira missão é derrotar um goblin que está a aterrorizar uma aldeia próxima! Boa sorte." << endl;
 	cout << "\33[35mMestre da Guilda:\33[0m Mas antes, que arma escolhes para esta aventura: machado(1) que aumenta o teu dano mas diminui a velocidade\n Espada(2) que é equilibrado por não dar buff nenhum\n Ou a adaga(3) que aumenta muito a velocidade mas diminui o dano.\n";
@@ -72,13 +72,21 @@ int main()
 							cout << "Dano dobrado!" << endl;
 							cout << "Role o dado para dar dano no monstro (1) : ";
 							cin >> resp;
-							num == 0;
+							
 							if (resp == 1)
 							{
-								num = ((rand() % 7 + 1) * 2) + dano;
-								cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
-								vidaM = vidaM - num;
-								cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
+								num = 0;
+								num = (rand() % 7 + 1) + dano;
+								if (num < 0)
+								{
+									num = rand () % 7+1 +dano;
+								}
+								else
+								{
+									cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
+									vidaM = vidaM - num;
+									cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
+								}
 							}
 						}
 						cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
@@ -265,7 +273,9 @@ int main()
 									num1 == 0;
 									if (resp == 1)
 									{
-										num1 = ((rand() % 7 + 1) * 2) + dano;
+										num1 = (rand() % 7 + 1) + dano;
+										int crit = num1 * 2;
+										num1 = crit;
 										cout << "\33[34mO teu dano foi: \33[0m" << num1 << endl;
 										vidaM = vidaM - num1;
 										cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -312,9 +322,9 @@ int main()
 						return 0;
 					}
 				}
-			} while (count < 3 && vidaP>0);
+			} while (count < 3 && vidaP > 0);
 			{
-				cout << "Mataste os cinco slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
+				cout << "Mataste os três slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 				ouro = ouro + 100;
 				xp = xp + 50;
 			}
@@ -353,7 +363,9 @@ int main()
 									num == 0;
 									if (resp == 1)
 									{
-										num = ((rand() % 7 + 1) * 2) + dano;
+										num = (rand() % 7 + 1) + dano;
+										int crit = num * 2;
+										num = crit;
 										cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
 										vidaM = vidaM - num;
 										cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -410,8 +422,8 @@ int main()
 		}
 
 		break;
-		break;
-		cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a). O que veio fazer aqui? " << endl << "Iniciar uma missão? Só há duas missãos no momento: " << endl << "Matar 4 slimes de nivel 3 : 100 de ouro e 50 xp (1)" << endl << "Matar 2 cães do inferno nivel 5, o que eu não recomendaria : 300 de ouro e 100 xp (2)";
+		case 2:
+		cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a). O que veio fazer aqui? " << endl << "Iniciar uma missão? Só há duas missãos no momento: " << endl << "Matar 3 slimes de nivel 3 : 100 de ouro e 50 xp (1)" << endl << "Matar 2 cães do inferno nivel 5, o que eu não recomendaria : 300 de ouro e 100 xp (2)";
 		cin >> resp1;
 		switch (resp1)
 		{
@@ -419,10 +431,10 @@ int main()
 			cout << "Aceitaste a missão de matar slimes!" << endl;
 			cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 			cout << "Estás numa floresta escura e húmida, sentes uma pressão pessada no ar em que respiras." << endl << "De repente um grupo de 5 slimes te ataca." << endl;
-
+			count = 0;
 			do
 			{
-				int count1 = count1 + 1;
+				count++;
 				do
 				{
 					if (vidaP > 0)
@@ -448,7 +460,9 @@ int main()
 									num1 == 0;
 									if (resp == 1)
 									{
-										num1 = ((rand() % 7 + 1) * 2) + dano;
+										num1 = (rand() % 7 + 1) + dano;
+										int crit = num1 * 2;
+										num1 = crit;
 										cout << "\33[34mO teu dano foi: \33[0m" << num1 << endl;
 										vidaM = vidaM - num1;
 										cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -495,9 +509,9 @@ int main()
 						return 0;
 					}
 				}
-			} while (count < 5 && vidaP>0);
+			} while (count < 3 && vidaP>0);
 			{
-				cout << "Mataste os cinco slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
+				cout << "Mataste os 3 slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 				ouro = ouro + 100;
 				xp = xp + 50;
 			}
@@ -506,6 +520,7 @@ int main()
 			cout << "Aceitaste a missão de matar cães do inferno! Só um milagre pode-te salvar." << endl;
 			cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 			cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
+			count = 0;
 			do
 			{
 				vidaM = 50;
@@ -535,7 +550,9 @@ int main()
 									num == 0;
 									if (resp == 1)
 									{
-										num = ((rand() % 7 + 1) * 2) + dano;
+										num = (rand() % 7 + 1) + dano;
+										int crit = num * 2;
+										num = crit;
 										cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
 										vidaM = vidaM - num;
 										cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -629,7 +646,9 @@ int main()
 								num == 0;
 								if (resp == 1)
 								{
-									num = ((rand() % 7 + 1) * 2) + dano;
+									num = (rand() % 7 + 1) + dano;
+									int crit = num * 2;
+									num = crit;
 									cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
 									vidaM = vidaM - num;
 									cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -711,7 +730,9 @@ int main()
 								num == 0;
 								if (resp == 1)
 								{
-									num = ((rand() % 7 + 1) * 2) + dano;
+									num = (rand() % 7 + 1) + dano;
+									int crit = num * 2;
+									num = crit;
 									cout << "\33[34mO teu dano foi: \33[0m" << num << endl;
 									vidaM = vidaM - num;
 									cout << "\33[32mO monstro está com: " << vidaM << "vida \33[0m" << endl;
@@ -802,7 +823,8 @@ int main()
 			cout << "Opção inválida, escolhe novamente: ";
 			cin >> resp;
 		}
-		cout << "Obrigado por jogares o meu RPG simples em C++!" << endl;
-		return 0;
+		
 	}
+	cout << "=====Obrigado por jogares o meu RPG simples em C++!=====" << endl;
+	return 0;
 }
