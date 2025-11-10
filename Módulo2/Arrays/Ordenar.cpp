@@ -15,7 +15,7 @@ int main()
 			if (num[i]>num[i+1])
 			{
 				aux = num[i];
-				num[i] = num[i + 1];//Dentro do for é para trocar os números pela ordem crescente
+				num[i] = num[i + 1];//Dentro do for Ã© para trocar os nÃºmeros pela ordem crescente
 				num[i + 1] = aux;
 				trocar++;
 				
