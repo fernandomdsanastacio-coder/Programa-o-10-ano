@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "Portuguese");
-	int  resp1, vidas, count = 0, i, resp, vidaM = 20, vidaP = 20, arma, dano = 0, velocidade = 0, defesa = 0, ouro = 0, xp = 0, pontos = 0, pontosVe = 0, pontosD = 0, pontosV = 0;
+	int  resp1,num, vidas, count = 0, i, resp, vidaM = 20, vidaP = 20, arma, dano = 0, velocidade = 0, defesa = 0, ouro = 0, xp = 0, pontos = 0, pontosVe = 0, pontosD = 0, pontosV = 0;
 	char escolha;
 	string nome;
 	srand(time(0));
@@ -1106,3 +1106,4 @@ int main()
 	cout << "=====Obrigado por jogares o meu RPG simples em C++!=====" << endl;
 	return 0;
 }
+
