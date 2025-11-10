@@ -15,11 +15,11 @@ int main()
 
 	for (int i = 0; i < 5; ++i)
 	{
-		cout << "Diz um nome da " << i + 1 << "ª menina\n";
+		cout << "Diz um nome da " << i + 1 << "Âª menina\n";
 		cin >> nomes[i];
 		idades[i] = (rand() % 40) + 15;
 	}
-	cout << "Qual é o número da menina que quer saber?\n";
+	cout << "Qual Ã© o nÃºmero da menina que quer saber?\n";
 	cin >> num;
 	cout << "A menina " << nomes[num - 1] << " tem " << idades[num - 1] << " anos\n";
 
