@@ -13,16 +13,16 @@ int main()
 
 	for (i = 0; i < 5; i++)
 	{
-		cout << "Diz o nome da " << i + 1 << "º namorada: ";
+		cout << "Diz o nome da " << i + 1 << "Âº namorada: ";
 		cin >> namoradas[i];
-		cout << "Diz o nome fofo da " << i + 1 << "º namorada: ";
+		cout << "Diz o nome fofo da " << i + 1 << "Âº namorada: ";
 		cin >> nomefofo[i];
 	}
 	while (sair == 'n') {
 
-		cout << "Diz-me o número da namorada ";
+		cout << "Diz-me o nÃºmero da namorada ";
 		cin >> num;
-		cout << "Nome da namorada é " << namoradas[num - 1] << "\nE tem como nome fofo " << nomefofo[num - 1];
+		cout << "Nome da namorada Ã© " << namoradas[num - 1] << "\nE tem como nome fofo " << nomefofo[num - 1];
 		cout << "\n Deseja sair? (s/n)";
 		cin >> sair;
 	}
