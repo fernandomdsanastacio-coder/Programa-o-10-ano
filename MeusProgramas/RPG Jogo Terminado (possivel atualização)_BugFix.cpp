@@ -66,7 +66,7 @@ int main()
 					resp == 0;
 					if (num > Monum)
 					{
-						if (num == 20)
+						if (num >= 20)
 						{
 							cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 							cout << "Dano dobrado!" << endl;
@@ -264,7 +264,7 @@ int main()
 							resp == 0;
 							if (num1 > Monum1)
 							{
-								if (num1 == 20)
+								if (num1 >= 20)
 								{
 									cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 									cout << "Dano dobrado!" << endl;
@@ -354,7 +354,7 @@ int main()
 							resp == 0;
 							if (num > Monum)
 							{
-								if (num == 20)
+								if (num >= 20)
 								{
 									cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 									cout << "Dano dobrado!" << endl;
@@ -451,7 +451,7 @@ int main()
 							resp == 0;
 							if (num1 > Monum1)
 							{
-								if (num1 == 20)
+								if (num1 >= 20)
 								{
 									cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 									cout << "Dano dobrado!" << endl;
@@ -541,7 +541,7 @@ int main()
 							resp == 0;
 							if (num > Monum)
 							{
-								if (num == 20)
+								if (num >= 20)
 								{
 									cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 									cout << "Dano dobrado!" << endl;
@@ -637,7 +637,7 @@ int main()
 						resp == 0;
 						if (num > Monum)
 						{
-							if (num == 20)
+							if (num >= 20)
 							{
 								cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 								cout << "Dano dobrado!" << endl;
@@ -721,7 +721,7 @@ int main()
 						resp == 0;
 						if (num > Monum)
 						{
-							if (num == 20)
+							if (num >= 20)
 							{
 								cout << "\33[92mCRÍTICO!!\33[0m" << endl;
 								cout << "Dano dobrado!" << endl;
@@ -828,3 +828,4 @@ int main()
 	cout << "=====Obrigado por jogares o meu RPG simples em C++!=====" << endl;
 	return 0;
 }
+
