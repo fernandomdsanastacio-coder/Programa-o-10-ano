@@ -2,6 +2,7 @@
 #include <string>
 #include <locale.h>
 #include <ctime>
+#include <windows.h>
 using namespace std;
 
 int main()
@@ -18,6 +19,8 @@ int main()
 	cin >> arma;
 	cout << "\33[35mMestre da Guilda:\33[0m Recebes-te também uma armadura leve que te dá mais 5 de defesa." << endl;
 	defesa = defesa + 5;
+	Sleep(1500);
+	system("cls");
 	if (arma < 1 || arma > 3)
 	{
 		cout << "Arma inválida, escolhe novamente: ";
@@ -42,9 +45,10 @@ int main()
 			velocidade = velocidade + 2;
 			break;
 
-		}
 	}
-	cout << "Fos-te atráz do lugar marcado no papel da missão e encontrás-te dois goblin!! " << endl;
+	Sleep(1500);
+	system("cls");
+	cout << "Fos-te atrás do lugar marcado no papel da missão e encontrás-te dois goblin!! " << endl;
 	cout << "Estás a lutar com um dos goblin! Eles têm 20 de vida cada um. Boa sorte!!" << endl;
 	do
 	{
@@ -53,16 +57,17 @@ int main()
 		{
 			if (vidaP > 0)
 			{
-
+				
 				cout << "Gire o dado para atacar (1) : ";
 				cin >> resp;
 				if (resp == 1)
 				{
+					system("cls");
 					int num = (rand() % 19 + 1) + velocidade;
 					cout << "O valor do dado foi: " << num << endl;
 					int Monum = (rand() % 19 + 1) - defesa;
 					cout << "O valor do dado do monstro foi: " << Monum << endl;
-					resp == 0;
+					resp = 0;
 					if (num > Monum)
 					{
 						if (num >= 20)
@@ -92,7 +97,7 @@ int main()
 						cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 						cout << "Role o dado para dar dano no monstro (1): ";
 						cin >> resp;
-						num == 0;
+						num = 0;
 						if (resp == 1)
 						{
 							num = rand() % 7 + 1;
@@ -110,6 +115,9 @@ int main()
 						vidaP = vidaP - Monum;
 						cout << "\33[31mVocê está com :" << vidaP << " de vida\33[0m" << endl;
 					}
+					Sleep(2000);
+					system("cls");
+
 				}
 				else
 				{
@@ -121,7 +129,7 @@ int main()
 		{
 			if (vidaM <= 0)
 			{
-				cout << "\33[32mVences-te o monstro!\33[0m" << endl;
+				cout << "\33[32mVences-te o monstro! Nada mau.\33[0m" << endl;
 				vidaM = 20;
 			}
 			else
@@ -137,11 +145,15 @@ int main()
 		cout << "Mataste os dois goblins! Parabéns!!" << endl << "Recebeste xp e ouro";
 		ouro = ouro + 50;
 		xp = xp + 20;
+		Sleep(1500);
+		system("cls");
 	}
 	cout << "Depois de uma longa batalha, voltas à guilda para falares com a mestre." << endl;
 	cout << "\33[35mMestre da Guilda:\33[0m Parabéns senhor herói " << nome << ", completaste a tua primeira missão com sucesso!" << endl << "Aqui está a tua recompensa de 50 de ouro e 30 de xp." << endl;
 	ouro = ouro + 50;
 	xp = xp + 30;
+	Sleep(1500);
+	system("cls");
 	cout << "Agora tens " << ouro << " de ouro" << endl << "upaste de nivel, recebes-te 10 pontos para distribuir nas tuas stats!" << endl;
 	pontos = pontos + 10;
 	cout << "Queres distribuir os pontos agora? (s/n)" << endl;
@@ -168,24 +180,31 @@ int main()
 			cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 			cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
 		}
+		Sleep(1500);
+		system("cls");
 	}
 	else if (escolha == 'n' || escolha == 'N')
 	{
 		cout << "Muito bem, podes distribuir os pontos mais tarde." << endl;
+		Sleep(1500);
+		system("cls");
 	}
 	resp = 0;
 	cout << "Estás na capital do reino de Preinst, queres fazer o que?" << endl << "Ir até ao mercador comprar armamento (1)" << endl << "Ir até á guilda (2)" << endl << "Sair da cidade(3)";
 	cin >> resp;
+	system("cls");
 	if (resp < 1 || resp > 3)
 	{
 		cout << "Opção inválida, escolhe novamente: ";
 		cin >> resp;
+		system("cls");
 	}
 	switch (resp)
 	{
 	case 1:
 		cout << "\33[36mMercador:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a) à minha loja! O que desejas comprar?" << endl << "Tens um machado nivel dois que aumenta mais o dano (1) : 100 ouro." << endl << "Uma espada que aumenta um pouco em dano e velocidade (2) : 75 ouro." << endl << "Uma adaga que aumenta a velocidade (3) : 100 ouro." << endl << "Podes comprar uma armadura se quisers (4) : 150 ouro." << endl;
 		cin >> resp1;
+		system("cls");
 		switch (resp1)
 		{
 		case 1:
@@ -196,10 +215,13 @@ int main()
 				ouro = ouro - 100;
 				cout << "O teu dano agora é: " << dano << endl;
 				cout << "Ouro restante: " << ouro << endl;
+				Sleep(1500);
+				system("cls");
 			}
 			else
 			{
 				cout << "Não tens ouro suficiente!" << endl;
+				system("cls");
 			}
 			break;
 		case 2:
@@ -211,10 +233,13 @@ int main()
 				ouro = ouro - 75;
 				cout << "O teu dano e velocidade agora são: " << dano << " : " << velocidade << endl;
 				cout << "Ouro restante: " << ouro << endl;
+				Sleep(1500);
+				system("cls");
 			}
 			else
 			{
 				cout << "Não tens ouro suficiente!" << endl;
+				system("cls");
 			}
 			break;
 		case 3:
@@ -225,10 +250,13 @@ int main()
 				ouro = ouro - 100;
 				cout << "A tua velocidade agora é: " << velocidade << endl;
 				cout << "Ouro restante: " << ouro << endl;
+				Sleep(1500);
+				system("cls");
 			}
 			else
 			{
 				cout << "Não tens ouro suficiente!" << endl;
+				system("cls");
 			}
 			break;
 
@@ -238,6 +266,7 @@ int main()
 		cout << "\33[33m Ouro restante: " << ouro << "\33[0m" << endl;
 		cout << "Queres sair da cidade(1) ou ir para a guilda(2)?";
 		cin >> resp;
+		system("cls");
 		switch (resp)
 		{
 		case 1:
@@ -245,16 +274,18 @@ int main()
 			cout << "Após saires da cidade encontrás-te uma mulher a pedir ajuda." << endl << "Ajudas a mulher? (s/n)";
 			escolha = 'n';
 			cin >> escolha;
+			system("cls");
 			if (escolha == 's' || escolha == 'S')
 			{
 				cout << "\33[36mMulher:\33[0m Senhor por favor ajude-me a encontrar o meu filho dou-lhe uma recompesa de 50 moedas de ouro" << endl;
 				cout << "Após uma longa procura encontraste o filho da mulher preso por um goblin!" << endl;
+				Sleep(1000);
+				system("cls");
 				vidaM = 30;
 				do
 				{
 					if (vidaP > 0)
 					{
-
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
 
@@ -264,7 +295,7 @@ int main()
 							cout << "O valor do dado foi: " << num << endl;
 							int Monum = (rand() % 19 + 1) - defesa;
 							cout << "O valor do dado do monstro foi: " << Monum << endl;
-							resp == 0;
+							resp = 0;
 							if (num > Monum)
 							{
 								if (num >= 20)
@@ -273,7 +304,7 @@ int main()
 									cout << "Dano dobrado!" << endl;
 									cout << "Role o dado para dar dano no monstro (1) : ";
 									cin >> resp;
-									num == 0;
+									num = 0;
 									if (resp == 1)
 									{
 										num = (rand() % 7 + 1) + dano;
@@ -294,7 +325,7 @@ int main()
 								cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 								cout << "Role o dado para dar dano no monstro (1): ";
 								cin >> resp;
-								num == 0;
+								num = 0;
 								if (resp == 1)
 								{
 									num = rand() % 7 + 1;
@@ -325,6 +356,8 @@ int main()
 					{
 						cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 						vidaM = 20;
+						Sleep(1500);
+						system("cls");
 					}
 					else
 					{
@@ -335,6 +368,8 @@ int main()
 				cout << "A mulher agradece-te e dá-te 50 de ouro como recompensa!" << endl;
 				ouro = ouro + 50;
 				cout << "Ouro atual: " << ouro << endl;
+				Sleep(1500);
+				system("cls");
 			}
 			else if (escolha == 'n' || escolha == 'N')
 			{
@@ -345,7 +380,8 @@ int main()
 				{
 					if (vidaP > 0)
 					{
-
+						Sleep(1500);
+						system("cls");
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
 
@@ -355,7 +391,7 @@ int main()
 							cout << "O valor do dado foi: " << num << endl;
 							int Monum = ((rand() % 19 + 1) - defesa) + 10;
 							cout << "O valor do dado do monstro foi: " << Monum << endl;
-							resp == 0;
+							resp = 0;
 							if (num > Monum)
 							{
 								if (num >= 20)
@@ -364,7 +400,7 @@ int main()
 									cout << "Dano dobrado!" << endl;
 									cout << "Role o dado para dar dano no monstro (1) : ";
 									cin >> resp;
-									num == 0;
+									num = 0;
 									if (resp == 1)
 									{
 										num = (rand() % 7 + 1) + dano;
@@ -385,7 +421,7 @@ int main()
 								cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 								cout << "Role o dado para dar dano no monstro (1): ";
 								cin >> resp;
-								num == 0;
+								num = 0;
 								if (resp == 1)
 								{
 									num = rand() % 7 + 1;
@@ -415,6 +451,8 @@ int main()
 					if (vidaM <= 0)
 					{
 						cout << "\33[32mVences-te o golem! A tua sorte nunca mais acaba porra.\33[0m" << endl;
+						Sleep(1500);
+						system("cls");
 
 					}
 					else
@@ -431,6 +469,7 @@ int main()
 					pontos = pontos + 10;
 					cout << "Queres distribuir os pontos agora? (s/n)" << endl;
 					cin >> escolha;
+					system("cls");
 					if (escolha == 's' || escolha == 'S')
 					{
 
@@ -446,17 +485,23 @@ int main()
 						if ((pontosV + pontosD + pontosVe) > pontos)
 						{
 							cout << "Distribuição inválida, tenta novamente em outra altura." << endl;
+							Sleep(1500);
+							system("cls");
 						}
 						else
 						{
 							pontos = pontos - (pontosV + pontosD + pontosVe);
 							cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 							cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
+							Sleep(1500);
+							system("cls");
 						}
 					}
 					else if (escolha == 'n' || escolha == 'N')
 					{
 						cout << "Muito bem, podes distribuir os pontos mais tarde." << endl;
+						Sleep(1500);
+						system("cls");
 					}
 
 				}
@@ -466,10 +511,13 @@ int main()
 			{
 				cout << "Opção inválida, escolhe novamente: ";
 				cin >> resp;
+				system("cls");
 			}
 		case 2:
 			cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a). O que veio fazer aqui? " << endl << "Iniciar uma missão? Só há duas missãos no momento: " << endl << "Matar 3 slimes de nivel 3 : 100 de ouro e 50 xp (1)" << endl << "Matar 2 cães do inferno nivel 5, o que eu não recomendaria : 300 de ouro e 100 xp (2)";
 			cin >> resp1;
+			
+			system("cls");
 			switch (resp1)
 			{
 			case 1:
@@ -477,6 +525,8 @@ int main()
 				cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 				cout << "Estás numa floresta escura e húmida, sentes uma pressão pessada no ar em que respiras." << endl << "De repente um grupo de 3 slimes te ataca." << endl;
 				count = 0;
+				Sleep(1500);
+				system("cls");
 				do
 				{
 					
@@ -485,6 +535,8 @@ int main()
 					{
 						if (vidaP > 0)
 						{
+							Sleep(500);
+							system("cls");
 							resp = 0;
 							cout << "Gire o dado para atacar (1) : ";
 							cin >> resp;
@@ -494,7 +546,7 @@ int main()
 								cout << "O valor do dado foi: " << num1 << endl;
 								int Monum1 = (rand() % 19 + 1) - defesa;
 								cout << "O valor do dado do monstro foi: " << Monum1 << endl;
-								resp == 0;
+								resp = 0;
 								if (num1 > Monum1)
 								{
 									if (num1 >= 20)
@@ -503,7 +555,7 @@ int main()
 										cout << "Dano dobrado!" << endl;
 										cout << "Role o dado para dar dano no monstro (1) : ";
 										cin >> resp;
-										num1 == 0;
+										num1 = 0;
 										if (resp == 1)
 										{
 											num = (rand() % 7 + 1) + dano;
@@ -524,7 +576,7 @@ int main()
 									cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 									cout << "Role o dado para dar dano no monstro (1): ";
 									cin >> resp;
-									num1 == 0;
+									num1 = 0;
 									if (resp == 1)
 									{
 										num1 = rand() % 7 + 1;
@@ -555,6 +607,8 @@ int main()
 						{
 							cout << "\33[32mVences-te um dos slimes!\33[0m" << endl;
 							vidaM = 20;
+							Sleep(1500);
+							system("cls");
 						}
 						else
 						{
@@ -567,6 +621,8 @@ int main()
 					cout << "Mataste os três slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 					ouro = ouro + 100;
 					xp = xp + 50;
+					Sleep(1500);
+					system("cls");
 				}
 				break;
 			case 2:
@@ -574,6 +630,8 @@ int main()
 				cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 				cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
 				vidaM = 50;
+				Sleep(1500);
+				system("cls");
 				do
 				{
 
@@ -582,7 +640,8 @@ int main()
 					{
 						if (vidaP > 0)
 						{
-
+							Sleep(1500);
+							system("cls");
 							cout << "Gire o dado para atacar (1) : ";
 							cin >> resp;
 							if (resp == 1)
@@ -591,7 +650,7 @@ int main()
 								cout << "O valor do dado foi: " << num << endl;
 								int Monum = (rand() % 19 + 1) - defesa + 7;
 								cout << "O valor do dado do monstro foi: " << Monum << endl;
-								resp == 0;
+								resp = 0;
 								if (num > Monum)
 								{
 									if (num >= 20)
@@ -600,7 +659,7 @@ int main()
 										cout << "Dano dobrado!" << endl;
 										cout << "Role o dado para dar dano no monstro (1) : ";
 										cin >> resp;
-										num == 0;
+										num = 0;
 										if (resp == 1)
 										{
 											num = (rand() % 7 + 1) + dano;
@@ -621,7 +680,7 @@ int main()
 									cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 									cout << "Role o dado para dar dano no monstro (1): ";
 									cin >> resp;
-									num == 0;
+									num = 0;
 									if (resp == 1)
 									{
 										num = rand() % 7 + 1;
@@ -652,6 +711,8 @@ int main()
 						{
 							cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 							vidaM = 20;
+							Sleep(1500);
+							system("cls");
 						}
 						else
 						{
@@ -664,6 +725,8 @@ int main()
 					cout << "Mataste os dois cães do inferno! Parabéns!!" << endl << "Recebeste xp e ouro";
 					ouro = ouro + 300;
 					xp = xp + 100;
+					Sleep(1500);
+					system("cls");
 				}
 				break;
 			}
@@ -674,6 +737,7 @@ int main()
 	case 2:
 		cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", bem vindo(a). O que veio fazer aqui? " << endl << "Iniciar uma missão? Só há duas missãos no momento: " << endl << "Matar 3 slimes de nivel 3 : 100 de ouro e 50 xp (1)" << endl << "Matar 2 cães do inferno nivel 5, o que eu não recomendaria : 300 de ouro e 100 xp (2)";
 		cin >> resp1;
+		system("cls");
 		switch (resp1)
 		{
 		case 1:
@@ -688,6 +752,8 @@ int main()
 				{
 					if (vidaP > 0)
 					{
+						Sleep(1500);
+						system("cls");
 						resp = 0;
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
@@ -697,7 +763,7 @@ int main()
 							cout << "O valor do dado foi: " << num1 << endl;
 							int Monum1 = (rand() % 19 + 1) - defesa;
 							cout << "O valor do dado do monstro foi: " << Monum1 << endl;
-							resp == 0;
+							resp = 0;
 							if (num1 > Monum1)
 							{
 								if (num1 >= 20)
@@ -706,7 +772,7 @@ int main()
 									cout << "Dano dobrado!" << endl;
 									cout << "Role o dado para dar dano no monstro (1) : ";
 									cin >> resp;
-									num1 == 0;
+									num1 = 0;
 									if (resp == 1)
 									{
 										num = (rand() % 7 + 1) + dano;
@@ -727,7 +793,7 @@ int main()
 								cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 								cout << "Role o dado para dar dano no monstro (1): ";
 								cin >> resp;
-								num1 == 0;
+								num1 = 0;
 								if (resp == 1)
 								{
 									num1 = rand() % 7 + 1;
@@ -758,6 +824,8 @@ int main()
 					{
 						cout << "\33[32mVences-te um dos slimes!\33[0m" << endl;
 						vidaM = 20;
+						Sleep(1500);
+						system("cls");
 					}
 					else
 					{
@@ -770,6 +838,8 @@ int main()
 				cout << "Mataste os 3 slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 				ouro = ouro + 100;
 				xp = xp + 50;
+				Sleep(1500);
+				system("cls");
 			}
 			break;
 		case 2:
@@ -777,6 +847,8 @@ int main()
 			cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 			cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
 			count = 0;
+			Sleep(1500);
+			system("cls");
 			do
 			{
 				vidaM = 50;
@@ -785,7 +857,8 @@ int main()
 				{
 					if (vidaP > 0)
 					{
-
+						Sleep(1500);
+						system("cls");
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
 						if (resp == 1)
@@ -794,7 +867,7 @@ int main()
 							cout << "O valor do dado foi: " << num << endl;
 							int Monum = (rand() % 19 + 1) - defesa + 7;
 							cout << "O valor do dado do monstro foi: " << Monum << endl;
-							resp == 0;
+							resp = 0;
 							if (num > Monum)
 							{
 								if (num >= 20)
@@ -803,7 +876,7 @@ int main()
 									cout << "Dano dobrado!" << endl;
 									cout << "Role o dado para dar dano no monstro (1) : ";
 									cin >> resp;
-									num == 0;
+									num = 0;
 									if (resp == 1)
 									{
 										num = (rand() % 7 + 1) + dano;
@@ -824,7 +897,7 @@ int main()
 								cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 								cout << "Role o dado para dar dano no monstro (1): ";
 								cin >> resp;
-								num == 0;
+								num = 0;
 								if (resp == 1)
 								{
 									num = rand() % 7 + 1;
@@ -855,6 +928,8 @@ int main()
 					{
 						cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 						vidaM = 20;
+						Sleep(1500);
+						system("cls");
 					}
 					else
 					{
@@ -867,6 +942,8 @@ int main()
 				cout << "Mataste os dois cães do inferno! Parabéns!!" << endl << "Recebeste xp e ouro";
 				ouro = ouro + 300;
 				xp = xp + 100;
+				Sleep(1500);
+				system("cls");
 			}
 			break;
 		}
@@ -878,6 +955,8 @@ int main()
 		cout << "Após saires da cidade encontrás-te uma mulher a pedir ajuda." << endl << "Ajudas a mulher? (s/n)";
 		char escolha = 'n';
 		cin >> escolha;
+		
+		system("cls");
 		if (escolha == 's' || escolha == 'S')
 		{
 			cout << "\33[36mMulher:\33[0m Senhor por favor ajude-me a encontrar o meu filho dou-lhe uma recompesa de 50 moedas de ouro" << endl;
@@ -887,7 +966,8 @@ int main()
 			{
 				if (vidaP > 0)
 				{
-
+					Sleep(1500);
+					system("cls");
 					cout << "Gire o dado para atacar (1) : ";
 					cin >> resp;
 
@@ -897,7 +977,7 @@ int main()
 						cout << "O valor do dado foi: " << num << endl;
 						int Monum = (rand() % 19 + 1) - defesa;
 						cout << "O valor do dado do monstro foi: " << Monum << endl;
-						resp == 0;
+						resp = 0;
 						if (num > Monum)
 						{
 							if (num >= 20)
@@ -906,7 +986,7 @@ int main()
 								cout << "Dano dobrado!" << endl;
 								cout << "Role o dado para dar dano no monstro (1) : ";
 								cin >> resp;
-								num == 0;
+								num = 0;
 								if (resp == 1)
 								{
 									num = (rand() % 7 + 1) + dano;
@@ -927,7 +1007,7 @@ int main()
 							cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 							cout << "Role o dado para dar dano no monstro (1): ";
 							cin >> resp;
-							num == 0;
+							num = 0;
 							if (resp == 1)
 							{
 								num = rand() % 7 + 1;
@@ -958,6 +1038,8 @@ int main()
 				{
 					cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 					vidaM = 20;
+					Sleep(1500);
+					system("cls");
 				}
 				else
 				{
@@ -968,17 +1050,22 @@ int main()
 			cout << "A mulher agradece-te e dá-te 50 de ouro como recompensa!" << endl;
 			ouro = ouro + 50;
 			cout << "Ouro atual: " << ouro << endl;
+			Sleep(1500);
+			system("cls");
 		}
 		else if (escolha == 'n' || escolha == 'N')
 		{
 			cout << "Ignoraste a mulher e seguiste o teu caminho. Não julgo-te." << endl;
 			cout << "Após andares mais um pouco, vês uma pedra meio estranha e acabas por bater nela." << endl << "De repente a pedra se transforma em um golem gigante, com olhos vermelhos e a sair espuma da boca" << endl << "-Parece que está doente - disses e ele vai para cima de ti com tudo ";
 			vidaM = 100;
+			Sleep(1500);
+			system("cls");
 			do
 			{
 				if (vidaP > 0)
 				{
-
+					Sleep(1500);
+					system("cls");
 					cout << "Gire o dado para atacar (1) : ";
 					cin >> resp;
 
@@ -988,7 +1075,7 @@ int main()
 						cout << "O valor do dado foi: " << num << endl;
 						int Monum = ((rand() % 19 + 1) - defesa) + 10;
 						cout << "O valor do dado do monstro foi: " << Monum << endl;
-						resp == 0;
+						resp = 0;
 						if (num > Monum)
 						{
 							if (num >= 20)
@@ -997,7 +1084,7 @@ int main()
 								cout << "Dano dobrado!" << endl;
 								cout << "Role o dado para dar dano no monstro (1) : ";
 								cin >> resp;
-								num == 0;
+								num = 0;
 								if (resp == 1)
 								{
 									num = (rand() % 7 + 1) + dano;
@@ -1019,7 +1106,7 @@ int main()
 							cout << "\33[92mVocê atacou o monstro com sucesso!\33[0m" << endl;
 							cout << "Role o dado para dar dano no monstro (1): ";
 							cin >> resp;
-							num == 0;
+							num = 0;
 							if (resp == 1)
 							{
 								num = rand() % 7 + 1;
@@ -1049,7 +1136,8 @@ int main()
 				if (vidaM <= 0)
 				{
 					cout << "\33[32mVences-te o golem! A tua sorte nunca mais acaba porra.\33[0m" << endl;
-
+					Sleep(1500);
+					system("cls");
 				}
 				else
 				{
@@ -1065,6 +1153,8 @@ int main()
 				pontos = pontos + 10;
 				cout << "Queres distribuir os pontos agora? (s/n)" << endl;
 				cin >> escolha;
+				
+				system("cls");
 				if (escolha == 's' || escolha == 'S')
 				{
 
@@ -1080,12 +1170,16 @@ int main()
 					if ((pontosV + pontosD + pontosVe) > pontos)
 					{
 						cout << "Distribuição inválida, tenta novamente em outra altura." << endl;
+						Sleep(1500);
+						system("cls");
 					}
 					else
 					{
 						pontos = pontos - (pontosV + pontosD + pontosVe);
 						cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 						cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
+						Sleep(1500);
+						system("cls");
 					}
 				}
 				else if (escolha == 'n' || escolha == 'N')
@@ -1106,4 +1200,4 @@ int main()
 	cout << "=====Obrigado por jogares o meu RPG simples em C++!=====" << endl;
 	return 0;
 }
-
+}
