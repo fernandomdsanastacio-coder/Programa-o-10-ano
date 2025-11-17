@@ -25,21 +25,21 @@ int main()
 	}
 	for (i = 0; i < 5; ++i)
 	{
-		cout << "Escreva um número entre 1 e 50:\n";
+		cout << "Escreva um nÃºmero entre 1 e 50:\n";
 		cin >> adv;
 		if (adv == num[i])
 		{
 			++aux;
 		}
 	}
-	cout << "Números certos: " << aux << "\n";
-	cout << "Números da lotaria:" << "\n";
+	cout << "NÃºmeros certos: " << aux << "\n";
+	cout << "NÃºmeros da lotaria:" << "\n";
 	for (int k = 0; k < 5; ++k)
 	{
 		cout << num[k] << "\n";
 	}
 	if (aux == 5)
 	{
-		cout << "Parabéns, ganhas-te 1 milhão de donuts!!!";
+		cout << "ParabÃ©ns, ganhas-te 1 milhÃ£o de donuts!!!";
 	}
 }
