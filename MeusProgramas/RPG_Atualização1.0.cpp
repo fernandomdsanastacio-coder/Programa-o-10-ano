@@ -14,6 +14,7 @@ int main()
 	string nome;
 	string pausa;
 	srand(time(0));
+	cout << "\33[33mAtualização 1.0 :\33[0m Adicionado raças para ganhar velocidade, dano e vida.\33[0m" << endl;
 	cout << "=====Bem vindo ao RPG de combate por turnos!====" << endl << "Neste jogo tu és um herói que irá salvar o mundo de monstros terríveis! " << endl << "Para começar, escolha o seu nome: ";
 	cin >> nome;
 	system("cls");
@@ -44,12 +45,14 @@ int main()
 	cout << "Continuar (clicar enter) ";
 	cin.ignore(1000, '\n');
 	getline(cin, pausa);
+	system("cls");
 	cout << "\33[35mMestre da Guilda:\33[0m Olá senhor(a) herói(a) " << nome << ", eu sou a mestre da guilda que irá dar-te missões para derrotares monstros e ganhares recompensas pelas missõs." << endl << "Cada monstro derrotado irá dar-te pontos de experiência e ouro para poderes melhorar o teu equipamento!" << endl << "A tua primeira missão é derrotar um goblin que está a aterrorizar uma aldeia próxima! Boa sorte." << endl;
 	cout << "\33[35mMestre da Guilda:\33[0m Mas antes, que arma escolhes para esta aventura: machado(1) que aumenta o teu dano mas diminui a velocidade\n Espada(2) que é equilibrado por não dar buff nenhum\n Ou a adaga(3) que aumenta muito a velocidade mas diminui o dano.\n";
 	cin >> arma;
 	cout << "\33[35mMestre da Guilda:\33[0m Recebes-te também uma armadura leve que te dá mais 5 de defesa." << endl;
 	defesa = defesa + 5;
-	Sleep(1500);
+	cin.ignore(1000, '\n');
+	getline(cin, pausa);
 	system("cls");
 	if (arma < 1 || arma > 3)
 	{
@@ -76,7 +79,8 @@ int main()
 			break;
 
 		}
-		Sleep(1500);
+		cin.ignore(1000, '\n');
+		getline(cin, pausa);
 		system("cls");
 		cout << "Fos-te atrás do lugar marcado no papel da missão e encontrás-te dois goblin!! " << endl;
 		cout << "Estás a lutar com um dos goblin! Eles têm 20 de vida cada um. Boa sorte!!" << endl;
@@ -145,7 +149,8 @@ int main()
 							vidaP = vidaP - Monum;
 							cout << "\33[31mVocê está com :" << vidaP << " de vida\33[0m" << endl;
 						}
-						Sleep(2000);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 
 					}
@@ -175,14 +180,16 @@ int main()
 			cout << "Mataste os dois goblins! Parabéns!!" << endl << "Recebeste xp e ouro";
 			ouro = ouro + 50;
 			xp = xp + 20;
-			Sleep(1500);
+			cin.ignore(1000, '\n');
+			getline(cin, pausa);
 			system("cls");
 		}
 		cout << "Depois de uma longa batalha, voltas à guilda para falares com a mestre." << endl;
 		cout << "\33[35mMestre da Guilda:\33[0m Parabéns senhor herói " << nome << ", completaste a tua primeira missão com sucesso!" << endl << "Aqui está a tua recompensa de 50 de ouro e 30 de xp." << endl;
 		ouro = ouro + 50;
 		xp = xp + 30;
-		Sleep(1500);
+		cin.ignore(1000, '\n');
+		getline(cin, pausa);
 		system("cls");
 		cout << "Agora tens " << ouro << " de ouro" << endl << "upaste de nivel, recebes-te 10 pontos para distribuir nas tuas stats!" << endl;
 		pontos = pontos + 10;
@@ -210,13 +217,15 @@ int main()
 				cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 				cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
 			}
-			Sleep(1500);
+			cin.ignore(1000, '\n');
+			getline(cin, pausa);
 			system("cls");
 		}
 		else if (escolha == 'n' || escolha == 'N')
 		{
 			cout << "Muito bem, podes distribuir os pontos mais tarde." << endl;
-			Sleep(1500);
+			cin.ignore(1000, '\n');
+			getline(cin, pausa);
 			system("cls");
 		}
 		resp = 0;
@@ -245,7 +254,8 @@ int main()
 					ouro = ouro - 100;
 					cout << "O teu dano agora é: " << dano << endl;
 					cout << "Ouro restante: " << ouro << endl;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				else
@@ -263,12 +273,15 @@ int main()
 					ouro = ouro - 75;
 					cout << "O teu dano e velocidade agora são: " << dano << " : " << velocidade << endl;
 					cout << "Ouro restante: " << ouro << endl;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				else
 				{
 					cout << "Não tens ouro suficiente!" << endl;
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				break;
@@ -280,12 +293,15 @@ int main()
 					ouro = ouro - 100;
 					cout << "A tua velocidade agora é: " << velocidade << endl;
 					cout << "Ouro restante: " << ouro << endl;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				else
 				{
 					cout << "Não tens ouro suficiente!" << endl;
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				break;
@@ -309,7 +325,8 @@ int main()
 				{
 					cout << "\33[36mMulher:\33[0m Senhor por favor ajude-me a encontrar o meu filho dou-lhe uma recompesa de 50 moedas de ouro" << endl;
 					cout << "Após uma longa procura encontraste o filho da mulher preso por um goblin!" << endl;
-					Sleep(1000);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 					vidaM = 30;
 					do
@@ -386,7 +403,8 @@ int main()
 						{
 							cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 							vidaM = 20;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 						else
@@ -398,7 +416,8 @@ int main()
 					cout << "A mulher agradece-te e dá-te 50 de ouro como recompensa!" << endl;
 					ouro = ouro + 50;
 					cout << "Ouro atual: " << ouro << endl;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				else if (escolha == 'n' || escolha == 'N')
@@ -410,7 +429,8 @@ int main()
 					{
 						if (vidaP > 0)
 						{
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 							cout << "Gire o dado para atacar (1) : ";
 							cin >> resp;
@@ -481,7 +501,8 @@ int main()
 						if (vidaM <= 0)
 						{
 							cout << "\33[32mVences-te o golem! A tua sorte nunca mais acaba porra.\33[0m" << endl;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 
 						}
@@ -515,7 +536,8 @@ int main()
 							if ((pontosV + pontosD + pontosVe) > pontos)
 							{
 								cout << "Distribuição inválida, tenta novamente em outra altura." << endl;
-								Sleep(1500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 							}
 							else
@@ -523,14 +545,16 @@ int main()
 								pontos = pontos - (pontosV + pontosD + pontosVe);
 								cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 								cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
-								Sleep(1500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 							}
 						}
 						else if (escolha == 'n' || escolha == 'N')
 						{
 							cout << "Muito bem, podes distribuir os pontos mais tarde." << endl;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 
@@ -555,7 +579,8 @@ int main()
 					cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 					cout << "Estás numa floresta escura e húmida, sentes uma pressão pessada no ar em que respiras." << endl << "De repente um grupo de 3 slimes te ataca." << endl;
 					count = 0;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 					do
 					{
@@ -565,7 +590,8 @@ int main()
 						{
 							if (vidaP > 0)
 							{
-								Sleep(500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 								resp = 0;
 								cout << "Gire o dado para atacar (1) : ";
@@ -637,7 +663,8 @@ int main()
 							{
 								cout << "\33[32mVences-te um dos slimes!\33[0m" << endl;
 								vidaM = 20;
-								Sleep(1500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 							}
 							else
@@ -651,7 +678,8 @@ int main()
 						cout << "Mataste os três slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 						ouro = ouro + 100;
 						xp = xp + 50;
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 					}
 					break;
@@ -660,7 +688,8 @@ int main()
 					cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 					cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
 					vidaM = 50;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 					do
 					{
@@ -670,7 +699,8 @@ int main()
 						{
 							if (vidaP > 0)
 							{
-								Sleep(1500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 								cout << "Gire o dado para atacar (1) : ";
 								cin >> resp;
@@ -741,7 +771,8 @@ int main()
 							{
 								cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 								vidaM = 20;
-								Sleep(1500);
+								cin.ignore(1000, '\n');
+								getline(cin, pausa);
 								system("cls");
 							}
 							else
@@ -755,7 +786,8 @@ int main()
 						cout << "Mataste os dois cães do inferno! Parabéns!!" << endl << "Recebeste xp e ouro";
 						ouro = ouro + 300;
 						xp = xp + 100;
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 					}
 					break;
@@ -782,7 +814,8 @@ int main()
 					{
 						if (vidaP > 0)
 						{
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 							resp = 0;
 							cout << "Gire o dado para atacar (1) : ";
@@ -854,7 +887,8 @@ int main()
 						{
 							cout << "\33[32mVences-te um dos slimes!\33[0m" << endl;
 							vidaM = 20;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 						else
@@ -868,7 +902,8 @@ int main()
 					cout << "Mataste os 3 slimes! Parabéns!!" << endl << "Recebeste xp e ouro";
 					ouro = ouro + 100;
 					xp = xp + 50;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				break;
@@ -877,7 +912,8 @@ int main()
 				cout << "Boa sorte senhor(a) herói(a) " << nome << "!" << endl;
 				cout << "Estás num cemitério abandonado, o cheiro a morte é insuportável." << endl << "De repente 2 cães do inferno atacam-te." << endl;
 				count = 0;
-				Sleep(1500);
+				cin.ignore(1000, '\n');
+				getline(cin, pausa);
 				system("cls");
 				do
 				{
@@ -887,7 +923,8 @@ int main()
 					{
 						if (vidaP > 0)
 						{
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 							cout << "Gire o dado para atacar (1) : ";
 							cin >> resp;
@@ -958,7 +995,8 @@ int main()
 						{
 							cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 							vidaM = 20;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 						else
@@ -972,7 +1010,8 @@ int main()
 					cout << "Mataste os dois cães do inferno! Parabéns!!" << endl << "Recebeste xp e ouro";
 					ouro = ouro + 300;
 					xp = xp + 100;
-					Sleep(1500);
+					cin.ignore(1000, '\n');
+					getline(cin, pausa);
 					system("cls");
 				}
 				break;
@@ -996,7 +1035,8 @@ int main()
 				{
 					if (vidaP > 0)
 					{
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
@@ -1068,7 +1108,8 @@ int main()
 					{
 						cout << "\33[32mVences-te o monstro!\33[0m" << endl;
 						vidaM = 20;
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 					}
 					else
@@ -1080,7 +1121,8 @@ int main()
 				cout << "A mulher agradece-te e dá-te 50 de ouro como recompensa!" << endl;
 				ouro = ouro + 50;
 				cout << "Ouro atual: " << ouro << endl;
-				Sleep(1500);
+				cin.ignore(1000, '\n');
+				getline(cin, pausa);
 				system("cls");
 			}
 			else if (escolha == 'n' || escolha == 'N')
@@ -1088,13 +1130,15 @@ int main()
 				cout << "Ignoraste a mulher e seguiste o teu caminho. Não julgo-te." << endl;
 				cout << "Após andares mais um pouco, vês uma pedra meio estranha e acabas por bater nela." << endl << "De repente a pedra se transforma em um golem gigante, com olhos vermelhos e a sair espuma da boca" << endl << "-Parece que está doente - disses e ele vai para cima de ti com tudo ";
 				vidaM = 100;
-				Sleep(1500);
+				cin.ignore(1000, '\n');
+				getline(cin, pausa);
 				system("cls");
 				do
 				{
 					if (vidaP > 0)
 					{
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 						cout << "Gire o dado para atacar (1) : ";
 						cin >> resp;
@@ -1166,7 +1210,8 @@ int main()
 					if (vidaM <= 0)
 					{
 						cout << "\33[32mVences-te o golem! A tua sorte nunca mais acaba porra.\33[0m" << endl;
-						Sleep(1500);
+						cin.ignore(1000, '\n');
+						getline(cin, pausa);
 						system("cls");
 					}
 					else
@@ -1200,7 +1245,8 @@ int main()
 						if ((pontosV + pontosD + pontosVe) > pontos)
 						{
 							cout << "Distribuição inválida, tenta novamente em outra altura." << endl;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 						else
@@ -1208,7 +1254,8 @@ int main()
 							pontos = pontos - (pontosV + pontosD + pontosVe);
 							cout << "Pontos distribuídos com sucesso!" << endl << "Estás mais forte que nunca." << endl;
 							cout << "Vida: " << vidaP << " Dano: " << dano << " Velocidade: " << velocidade << endl;
-							Sleep(1500);
+							cin.ignore(1000, '\n');
+							getline(cin, pausa);
 							system("cls");
 						}
 					}
