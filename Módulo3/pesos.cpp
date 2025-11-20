@@ -11,9 +11,9 @@ int main()
 	float pesos[10];
 	for (i = 0; i < 10; i++)
 	{
-		cout << "Dá-me a altura da " << i+1 << "º pessoa ";
+		cout << "DÃ¡-me a altura da " << i+1 << "Âº pessoa ";
 		cin >> alt[i];
-		cout << "Dá-me o peso da " << i+1 << "º pessoa ";
+		cout << "DÃ¡-me o peso da " << i+1 << "Âº pessoa ";
 		cin >> pesos[i];
 		if (pesos[i] < 18, 5)
 		{
@@ -38,14 +38,14 @@ int main()
 
 	}
 	media = BP / 10;
-	cout << "\nTem uma média de " << media << "De pessoas";
+	cout << "\nTem uma mÃ©dia de " << media << "De pessoas";
 	float media1 = PN / 10;
-	cout << "\nTem uma média de " << media1 << "De pessoas";
+	cout << "\nTem uma mÃ©dia de " << media1 << "De pessoas";
 	float media2 = EX / 10;
-	cout << "\nTem uma média de " << media2 << "De pessoas";
+	cout << "\nTem uma mÃ©dia de " << media2 << "De pessoas";
 	float media3= O / 10;
-	cout << "\nTem uma média de " << media3 << "De pessoas";
+	cout << "\nTem uma mÃ©dia de " << media3 << "De pessoas";
 	float media4 = OE / 10;
-	cout << "\nTem uma média de " << media4 << "De pessoas";
+	cout << "\nTem uma mÃ©dia de " << media4 << "De pessoas";
 	return 0;
 }
