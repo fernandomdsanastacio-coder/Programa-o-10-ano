@@ -9,8 +9,8 @@ int main()
 {
 	setlocale(LC_ALL, "Portuguese");
 	int contador = 0, alturamax = -1, N, altura[110], i;
-	//altura fica a 110 porque o máximo é 100, ent é seguro
-	//alturamax começa em -1 para que a primeira altura seja lida
+	//altura fica a 110 porque o mÃ¡ximo Ã© 100, ent Ã© seguro
+	//alturamax comeÃ§a em -1 para que a primeira altura seja lida
 	cin >> N;
 	for (i = 0; i < N; i++)
 	{
@@ -20,7 +20,7 @@ int main()
 	{
 		if (altura[i] > alturamax)
 		{
-			contador++; //quando encontrar um novo número máximo, vai aumentar
+			contador++; //quando encontrar um novo nÃºmero mÃ¡ximo, vai aumentar
 			alturamax = altura[i]; //guarda a maior altura conhecida
 		}
 	}
