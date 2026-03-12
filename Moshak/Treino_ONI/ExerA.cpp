@@ -32,7 +32,7 @@ int main()
 				rd++;
 				
 			}
-			cout << rd << endl;
+			
 		}
 		
 		if (rd > 1)
@@ -53,3 +53,4 @@ int main()
 
 	return 0;
 }
+
